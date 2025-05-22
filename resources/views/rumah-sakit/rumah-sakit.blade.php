@@ -46,6 +46,12 @@
     </div>
 
     <script>
+        @if (session('success'))
+            alert("{{ session('success') }}");
+        @endif
+    </script>
+
+    <script>
         $(document).ready(function() {
             $.ajaxSetup({
                 headers: {
@@ -75,6 +81,10 @@
                             $('#modal-hapus-rumahsakit').modal('hide');
                             $('#button-hapus').text('Hapus');
                             location.reload();
+                        }, 1000);
+
+                        setTimeout(() => {
+                            alert("Rumah Sakit berhasil dihapus");
                         }, 1000);
                     }
                 });

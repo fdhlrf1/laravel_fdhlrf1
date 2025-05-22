@@ -59,6 +59,13 @@
         </div>
     </div>
 
+
+    <script>
+        @if (session('success'))
+            alert("{{ session('success') }}");
+        @endif
+    </script>
+
     <script>
         $(document).ready(function() {
             $.ajaxSetup({
@@ -84,7 +91,12 @@
                         setTimeout(() => {
                             $('#modal-hapus-pasien').modal('hide');
                             $('#button-hapus').text('Hapus');
+
                             location.reload();
+                        }, 1000);
+
+                        setTimeout(() => {
+                            alert("Pasien berhasil dihapus");
                         }, 1000);
                     }
                 });
